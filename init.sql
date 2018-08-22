@@ -110,7 +110,40 @@ SELECT * FROM Artist WHERE name LIKE '%black%';
 SELECT FirstName, LastName FROM Employee WHERE city = 'Calgary';
 
 -- 2
--- SELECT FirstName, LastName, BirthDate FROM Employee WHERE ;
+SELECT Max(BirthDate) FirstName, LastName, BirthDate FROM Employee;
 
 -- 3
+SELECT MIN(BirthDate) FirstName, LastName, BirthDate FROM Employee;
+
+-- 4
+SELECT * FROM Employee WHERE ReportsTo = 2;
+
+-- 5
+SELECT count(FirstName) FROM Employee WHERE city = 'Lethbridge';
+
+-- INVOICE TABLE
+
+-- 1
+SELECT count(InvoiceId) FROM Invoice;
+
+-- 2
+SELECT MIN(Total) FROM Invoice;
+
+-- 3
+SELECT Max(Total) FROM Invoice;
+
+-- 4
+SELECT * FROM Invoice WHERE total > 5;
+
+-- 5
+SELECT * FROM Invoice WHERE total < 5;
+
+-- 6
+SELECT * FROM Invoice WHERE BillingState IN ('CA', 'TX', 'AZ');
+
+-- 7
+SELECT avg(Total) FROM Invoice;
+
+-- 8
+SELECT sum(Total) FROM Invoice;
 
